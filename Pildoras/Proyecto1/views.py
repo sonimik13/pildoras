@@ -1,6 +1,11 @@
 from django.http import HttpResponse
 import datetime
+from django.template import Template, Context
 
+class Persona(object):
+    def __init__(self,nombre,apellido): #Constructor
+        self.nombre=nombre
+        self.apellido=apellido
 """ Django uses request and response objects to pass state through the system.
 When a page is requested, Django creates an HttpRequest object that contains
 metadata about the request. Then Django loads the appropriate view, passing 
@@ -11,8 +16,18 @@ This document explains the APIs for HttpRequest and HttpResponse objects, which 
 defined in the django.http module. """
 """ Creamos una vista con una funcion """
 def saludo(request): # primera vista
+    p1=Persona("Valentina","d'Andria")
+    nombre="Ever"
+    ahora=datetime.datetime.now()
+    doc_externo=open("D:/Google Drive/dev/technologies/django/Pildoras/Proyecto1/plantillas/miplantilla.html")
+    plantilla=Template(doc_externo.read())
+    doc_externo.close()
+    contexto=Context({"clave_diccionario":nombre, "apellido_persona":"Ruiz Diaz", "fecha":ahora,"novia_nombre":p1.nombre, "novia_apellido":p1.apellido}) #Contexto & ClaveDiccionario {}
 
-    return HttpResponse("Hola mundo con Django.")
+    
+
+    documento=plantilla.render(contexto)
+    return HttpResponse(documento)
 
 def despedida(request):
     documento="Chay mundo con Django."
