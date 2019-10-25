@@ -1,0 +1,12 @@
+Django uses request and response objects to pass state through the system.
+When a page is requested, Django creates an HttpRequest object that contains
+metadata about the request. Then Django loads the appropriate view, passing 
+the HttpRequest as the first argument to the view function. Each view is responsible 
+for returning an HttpResponse object.
+
+This document explains the APIs for HttpRequest and HttpResponse objects, which are 
+defined in the django.http module.
+
+
+%s          es un marcador de posicion.
+%           en esa posicion en concreto lo que quiero.
