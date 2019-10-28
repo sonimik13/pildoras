@@ -10,3 +10,9 @@ defined in the django.http module.
 
 %s          es un marcador de posicion.
 %           en esa posicion en concreto lo que quiero.
+
+Jerarquia u orden de llamadas desde plantilla
+    1. Diccionario
+    2. Atributo
+    3. Metodo
+    4. Indice de lista

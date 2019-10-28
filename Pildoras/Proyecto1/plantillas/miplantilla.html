@@ -1,13 +1,23 @@
 <html>
 
 <body>
-    <h1>
-        Hola, te saluda el mundo.
-    </h1>
+    <h1>Hola, bienvenido a Django.</h1>
     <p>Mi nombre es {{clave_diccionario}} {{apellido_persona}}</p>
     <p>La fecha del d&iacute;a es {{fecha.day}}/{{fecha.month}}/{{fecha.year}}</p>
     <!-- &iacute; es para acentos -->
     <p>Mi novia se llama {{novia_nombre}} {{novia_apellido}}</p>
+    <br>
+
+    <p><Strong>Lista: </Strong>{{temas}}</p>
+    <p><strong>Posicion 1 de la lista:</strong> {{temas.1}}</p>
+    <br>
+
+
+    <p><strong>Temas del curso:</strong></p>
+    {% for elTema in temon %}
+    <p>{{elTema}}</p>
+    {% endfor %}
+    </p>
 </body>
 
 </html>

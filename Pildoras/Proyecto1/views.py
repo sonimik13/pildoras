@@ -52,12 +52,13 @@ def dameFecha(request):
 
 
 def saludo(request):
+    temas_2=["Plantillas","Modelos","Formularios","Vistas","Despliegue"]
     p1=Persona("Valentina","d'Andria")
     nombre="Ever"
     ahora=datetime.datetime.now()
     doc_externo=open("D:/Google Drive/dev/technologies/django/Pildoras/Proyecto1/plantillas/miplantilla.html")
     plantilla=Template(doc_externo.read())
     doc_externo.close()
-    contexto=Context({"clave_diccionario":nombre, "apellido_persona":"Ruiz Diaz", "fecha":ahora,"novia_nombre":p1.nombre, "novia_apellido":p1.apellido}) #Contexto & ClaveDiccionario {}
+    contexto=Context({"clave_diccionario":nombre, "apellido_persona":"Ruiz Diaz", "fecha":ahora,"novia_nombre":p1.nombre, "novia_apellido":p1.apellido, "temas":["Italia","Japon","Tesla","Perro","Tango"],"temon":temas_2}) #Contexto & ClaveDiccionario {}
     documento=plantilla.render(contexto)
     return HttpResponse(documento)
