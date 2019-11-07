@@ -1,8 +1,22 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}About{% endblock %}
+{% block background %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Biografia</h1>
+<span class="subheading">Naci en el año 1700.</span>
+{% endblock %}
 
 {% block content %}
-<h2>ACERCA DE</h2>
-<p>Me llamo Ever.</p>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="">
+        </div>
+        <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading">Ever Ruiz Diaz</h2>
+            <p>Toco agua hirviendo & se quema el agua.</p>
+        </div>
+    </div>
 {% endblock %}
