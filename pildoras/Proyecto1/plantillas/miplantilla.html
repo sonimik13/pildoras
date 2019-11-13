@@ -2,21 +2,29 @@
 
 <body>
     <h1>Hola, bienvenido a Django.</h1>
-    <p>Mi nombre es {{clave_diccionario}} {{apellido_persona}}</p>
+    <p>Mi nombre es {{clave_diccionario.upper}} {{apellido_persona.upper}}</p>
     <p>La fecha del d&iacute;a es {{fecha.day}}/{{fecha.month}}/{{fecha.year}}</p>
     <!-- &iacute; es para acentos -->
-    <p>Mi novia se llama {{novia_nombre}} {{novia_apellido}}</p>
+    <p>Mi novia se llama {{novia_nombre.upper}} {{novia_apellido.upper}}</p>
     <br>
 
-    <p><Strong>Lista: </Strong>{{temas}}</p>
-    <p><strong>Posicion 1 de la lista:</strong> {{temas.1}}</p>
+    <p><Strong>Lista: </Strong>{{tema_1}}</p>
+    <p><strong>Posicion 3 de la lista:</strong> {{tema_1.2}}</p>
     <br>
 
 
     <p><strong>Temas del curso:</strong></p>
-    {% for elTema in temon %}
-    <p>{{elTema}}</p>
-    {% endfor %}
+    <p>
+        <ul>
+            {% if tema_2 %}
+                    {% for tema_2 in tema_2 %}
+                        <li>{{tema_2}}</li>
+                    {% endfor %}
+                    
+                {% else %}
+                    <p>No hay elementos que mostrar.</p>
+            {% endif %}
+        </ul>
     </p>
 </body>
 
